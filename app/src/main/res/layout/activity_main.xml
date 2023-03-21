@@ -62,6 +62,7 @@
             app:layout_constraintTop_toBottomOf="@id/textView4">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/profileConstraint"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -116,13 +117,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="25dp"
                     android:text="Date"
                     android:textColor="@color/color3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/dateAvailableTextView"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@+id/dateAvailableTextView" />
 
                 <TextView
                     android:id="@+id/positionConstant"
@@ -145,6 +144,117 @@
                     android:textColor="@color/color3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/dateAvailableTextView" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/additionalContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/dateAvailableConstant">
+
+                    <View
+                        android:id="@+id/viewAdditional"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/positionApplyingForConstant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Position You Are Applying For"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/viewAdditional" />
+
+                    <EditText
+                        android:id="@+id/positionApplyingForEdittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/positionApplyingForConstant" />
+
+                    <TextView
+                        android:id="@+id/dateAvailableForWorkConstant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Date Available For Work"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/positionApplyingForEdittext" />
+
+                    <EditText
+                        android:id="@+id/dateAvailableForWorkEdittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/dateAvailableForWorkConstant" />
+
+                    <TextView
+                        android:id="@+id/desiredSalaryConstant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Desired Salary"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/dateAvailableForWorkEdittext" />
+
+                    <EditText
+                        android:id="@+id/desiredSalaryEdittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/desiredSalaryConstant" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/arrow0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:onClick="expandView0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/additionalContent"
+                    app:srcCompat="@drawable/arrow_down" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -1221,22 +1331,375 @@
                         app:layout_constraintTop_toBottomOf="@id/years4" />
 
                     <EditText
-                        android:id= "@+id/trainings"
+                        android:id="@+id/trainings"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginStart="50dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginBottom="30dp"
                         android:layout_marginEnd="50dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/color3"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/trainingsConstant" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewEmployment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@color/color2"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardViewEducation">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/employmentText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/employment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:onClick="expandView3"
+                        android:text="EMPLOYMENT"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- expandable-->
+                    <ImageView
+                        android:id="@+id/arrow3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:onClick="expandView3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/arrow_right" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/employmentContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+
+                    <View
+                        android:id="@+id/viewEmployment"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/employerConstant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Employer"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/viewEmployment" />
+
+
+                    <EditText
+                        android:id="@+id/employerEdittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
                         android:background="@color/color1"
                         android:ems="10"
                         android:inputType="textPersonName"
                         android:textColor="@color/color3"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/trainingsConstant" />
+                        app:layout_constraintTop_toBottomOf="@id/employerConstant" />
 
+                    <TextView
+                        android:id="@+id/dateEmployedConstant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Date Employed"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/employerEdittext" />
+
+
+                    <EditText
+                        android:id="@+id/dateEmployedEdittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dateEmployedConstant" />
+
+                    <TextView
+                        android:id="@+id/workPhoneConstant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Work Phone"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dateEmployedEdittext" />
+
+
+                    <EditText
+                        android:id="@+id/workPhoneEdittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/workPhoneConstant" />
+
+                    <TextView
+                        android:id="@+id/payRateConstant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Pay Rate"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/workPhoneEdittext" />
+
+
+                    <EditText
+                        android:id="@+id/payRateEdittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/payRateConstant" />
+
+                    <TextView
+                        android:id="@+id/addressEmployerConstant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Address"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/payRateEdittext" />
+
+
+                    <EditText
+                        android:id="@+id/addressEmployerEdittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/addressEmployerConstant" />
+
+                    <TextView
+                        android:id="@+id/employmentPositionConstant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Position"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/addressEmployerEdittext" />
+
+
+                    <EditText
+                        android:id="@+id/employmentPositionEdittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/employmentPositionConstant" />
+
+                    <TextView
+                        android:id="@+id/dutiesPerformedConstant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Duties Performed"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/employmentPositionEdittext" />
+
+
+                    <EditText
+                        android:id="@+id/dutiesPerformedEdittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dutiesPerformedConstant" />
+
+                    <TextView
+                        android:id="@+id/supervisorNameConstant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Supervisors Name and Title"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dutiesPerformedEdittext" />
+
+
+                    <EditText
+                        android:id="@+id/supervisorNameEdittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/supervisorNameConstant" />
+
+                    <TextView
+                        android:id="@+id/reasonConstant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Reason For Leaving"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/supervisorNameEdittext" />
+
+
+                    <EditText
+                        android:id="@+id/reasonEdittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/reasonConstant" />
+
+                    <!--May We contact them? -->
+                    <TextView
+                        android:id="@+id/contactEmployer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp"
+                        android:text="May We Contact Them?"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/reasonEdittext"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <CheckBox
+                        android:id="@+id/yesContactEmployer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="Yes"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toStartOf="@id/noContactEmployer"
+                        app:layout_constraintTop_toBottomOf="@id/reasonEdittext" />
+
+                    <CheckBox
+                        android:id="@+id/noContactEmployer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="No"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/reasonEdittext" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>

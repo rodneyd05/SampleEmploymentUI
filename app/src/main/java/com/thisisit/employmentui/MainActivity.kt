@@ -3,7 +3,6 @@ package com.thisisit.employmentui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.constraintlayout.widget.ConstraintSet
 import com.thisisit.employmentui.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +13,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
+    }
+
+    @Suppress("UNUSED_PARAMETER")
+    fun expandView0(view: View) {
+        val v = mainBinding.additionalContent.visibility == View.GONE
+        if (v) {
+            mainBinding.additionalContent.visibility = View.VISIBLE
+            mainBinding.arrow0.setImageResource(R.drawable.arrow_up)
+        } else {
+            mainBinding.additionalContent.visibility = View.GONE
+            mainBinding.arrow0.setImageResource(R.drawable.arrow_down)
+        }
     }
 
     @Suppress("UNUSED_PARAMETER")
@@ -37,6 +48,18 @@ class MainActivity : AppCompatActivity() {
         } else {
             mainBinding.educationContent.visibility = View.GONE
             mainBinding.arrow2.setImageResource(R.drawable.arrow_right)
+        }
+    }
+
+    @Suppress("UNUSED_PARAMETER")
+    fun expandView3(view: View) {
+        val v = mainBinding.employmentContent.visibility == View.GONE
+        if (v) {
+            mainBinding.employmentContent.visibility = View.VISIBLE
+            mainBinding.arrow3.setImageResource(R.drawable.arrow_down)
+        } else {
+            mainBinding.employmentContent.visibility = View.GONE
+            mainBinding.arrow3.setImageResource(R.drawable.arrow_right)
         }
     }
 }
