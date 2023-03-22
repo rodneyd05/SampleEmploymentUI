@@ -17,9 +17,9 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="60dp"
             android:elevation="10dp"
-            android:text="Profile"
+            android:text="Job Application Profile"
             android:textColor="@color/green"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -78,46 +78,97 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+                <LinearLayout
+
+                    android:id="@+id/fullName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+                    <TextView
+                        android:id="@+id/firstNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|right"
+                        android:text="John"
+                        android:textColor="@color/color3" />
+
+                    <TextView
+                        android:id="@+id/lastNameTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text=" Smith"
+                        android:textColor="@color/color3" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/cityTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Manila"
+                    android:textAlignment="center"
+                    android:textColor="@color/color3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fullName" />
+
                 <TextView
                     android:id="@+id/positionTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="60dp"
+                    android:layout_marginStart="70dp"
                     android:layout_marginTop="30dp"
+                    android:gravity="center"
                     android:text="Manager"
+                    android:textAlignment="center"
                     android:textColor="@color/green"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                    app:layout_constraintTop_toBottomOf="@+id/cityTextView" />
 
                 <TextView
                     android:id="@+id/dateAvailableTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
+                    android:gravity="center"
                     android:text="05/01/23"
+                    android:textAlignment="center"
                     android:textColor="@color/green"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                    app:layout_constraintTop_toBottomOf="@+id/cityTextView" />
 
                 <TextView
                     android:id="@+id/salaryTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:layout_marginEnd="60dp"
+                    android:layout_marginEnd="70dp"
+                    android:gravity="center"
                     android:text="P25000"
+                    android:textAlignment="center"
                     android:textColor="@color/green"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                    app:layout_constraintTop_toBottomOf="@+id/cityTextView" />
 
                 <TextView
                     android:id="@+id/dateAvailableConstant"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="Date"
+                    android:text="Date Available"
+                    android:textAlignment="center"
                     android:textColor="@color/color3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -125,22 +176,24 @@
 
                 <TextView
                     android:id="@+id/positionConstant"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="60dp"
                     android:layout_marginTop="5dp"
-                    android:text="Position"
+                    android:text="Applying For"
+                    android:textAlignment="center"
                     android:textColor="@color/color3"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/dateAvailableTextView" />
 
                 <TextView
                     android:id="@+id/salaryConstant"
-                    android:layout_width="wrap_content"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="60dp"
-                    android:text="Salary"
+                    android:text="Desired Salary"
+                    android:textAlignment="center"
                     android:textColor="@color/color3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/dateAvailableTextView" />
@@ -149,7 +202,7 @@
                     android:id="@+id/additionalContent"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="30dp"
                     android:visibility="gone"
                     app:layout_constraintTop_toBottomOf="@+id/dateAvailableConstant">
 
@@ -1890,6 +1943,240 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/referencePhone1" />
+
+                    <!--Second Reference-->
+                    <TextView
+                        android:id="@+id/secondReference"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Second Reference"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/referencePhone1Edittext" />
+
+                    <TextView
+                        android:id="@+id/referenceName2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Name"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/secondReference" />
+
+                    <EditText
+                        android:id="@+id/referenceName2Edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/referenceName2" />
+
+                    <TextView
+                        android:id="@+id/referenceTitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Title"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/referenceName2Edittext" />
+
+                    <EditText
+                        android:id="@+id/referenceTitle2Edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/referenceTitle2" />
+
+                    <TextView
+                        android:id="@+id/referenceCompany2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Company"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/referenceTitle2Edittext" />
+
+                    <EditText
+                        android:id="@+id/referenceCompany2Edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/referenceCompany2" />
+
+                    <TextView
+                        android:id="@+id/referencePhone2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Phone"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/referenceCompany2Edittext" />
+
+                    <EditText
+                        android:id="@+id/referencePhone2Edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/referencePhone2" />
+
+                    <!--Third Reference-->
+                    <TextView
+                        android:id="@+id/thirdReference"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Third Reference"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/referencePhone2Edittext" />
+
+                    <TextView
+                        android:id="@+id/referenceName3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Name"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/thirdReference" />
+
+                    <EditText
+                        android:id="@+id/referenceName3Edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/referenceName3" />
+
+                    <TextView
+                        android:id="@+id/referenceTitle3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Title"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/referenceName3Edittext" />
+
+                    <EditText
+                        android:id="@+id/referenceTitle3Edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/referenceTitle3" />
+
+                    <TextView
+                        android:id="@+id/referenceCompany3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Company"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/referenceTitle3Edittext" />
+
+                    <EditText
+                        android:id="@+id/referenceCompany3Edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="50dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/referenceCompany3" />
+
+                    <TextView
+                        android:id="@+id/referencePhone3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Phone"
+                        android:textColor="@color/color3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/referenceCompany3Edittext" />
+
+                    <EditText
+                        android:id="@+id/referencePhone3Edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@color/color1"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:textColor="@color/color3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/referencePhone3" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
