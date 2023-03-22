@@ -62,4 +62,16 @@ class MainActivity : AppCompatActivity() {
             mainBinding.arrow3.setImageResource(R.drawable.arrow_right)
         }
     }
+
+    @Suppress("UNUSED_PARAMETER")
+    fun expandView4(view: View) {
+        val v = mainBinding.referencesContent.visibility == View.GONE
+        if (v) {
+            mainBinding.referencesContent.visibility = View.VISIBLE
+            mainBinding.arrow4.setImageResource(R.drawable.arrow_down)
+        } else {
+            mainBinding.references.visibility = View.GONE
+            mainBinding.arrow4.setImageResource(R.drawable.arrow_right)
+        }
+    }
 }
